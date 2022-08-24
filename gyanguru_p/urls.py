@@ -17,11 +17,14 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
-from course.views import HomePageView
+from course.views import HomePageView,CourseView,signupView
 
 urlpatterns = [
     # path('', include('course.urls')),
     path('admin/', admin.site.urls),
     path('', HomePageView.as_view(), name="homepage"),
+    path('course', CourseView.as_view(), name="CourseView"),
+    path('signup', signupView.as_view(), name="signupView"),
+
 ]
 
